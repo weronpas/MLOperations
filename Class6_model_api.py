@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-model = pickle.load(open("best_random_forest_model.pkl", "rb"))
+model = pickle.load(open("notebooks/best_random_forest_model.pkl", "rb"))
 
 @app.route("/")
 def index():
