@@ -194,7 +194,7 @@ threadpoolctl==3.6.0
 tinycss2==1.4.0
 toolz==1.0.0
 tornado==6.5.2
-TPOT2==0.1.9a0
+TPOT==1.1.0
 tqdm==4.67.1
 tracely==0.2.9
 traitlets==5.14.3
