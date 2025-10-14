@@ -56,7 +56,6 @@ st.sidebar.caption("Live data fetched from Open-Meteo API (Paris, France).")
 # -------------------------------
 if run_checkbox:
     st.sidebar.success("✅ Streaming active. Uncheck to stop.")
-
     while st.session_state["run_checkbox"]:
         try:
             # --- Fetch live data ---

@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
+import pandas as pd
 
 # -------------------------------
 # 1. Load model and scaler
@@ -57,8 +58,11 @@ for i in range(1, 29):
 input_data = np.array([[transaction_time] + user_inputs + [transaction_amount]])
 
 # Scale input
-scaled = scaler.transform(input_data)
-
+if hasattr(scaler, "feature_names_in_"):
+    input_df = pd.DataFrame(input_data, columns=scaler.feature_names_in_)
+    scaled = scaler.transform(input_df)
+else:
+    scaled = scaler.transform(input_data)
 # -------------------------------
 # 4. Prediction section
 # -------------------------------
